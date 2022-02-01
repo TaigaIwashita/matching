@@ -19,10 +19,6 @@
             <p>{{ $post->start_time }} ~ {{ $post->finish_time }}</p>
             <h2>掲載期間</h2>
             <p>{{ $post->limit_time }} </p>
-            <h2>現在の参加人数</h2>
-            <p>{{ $post->user_permission }}人</p>
-            <h2>プラットフォーム</h2>
-            <p>{{ $post->release_format }}</p>
         </div>
         <div class="footer">
             <a href="/">戻る</a>

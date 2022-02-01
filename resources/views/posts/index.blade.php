@@ -20,11 +20,10 @@
                     <p class='body'>{{ $post->start_time }} ~ {{ $post->finish_time }}</p>
                     <h3>掲載期間</h3>
                     <p class='body'>{{ $post->limit_time }} </p>
-                    <h3>現在の参加人数</h3>
-                    <p class='body'>{{ $post->user_permission }}人</p>
                 </div>
             @endforeach
         </div>
+        <p class='create'>[<a href='/posts/create'>新しく募集する</a>]</p>
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
