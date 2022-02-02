@@ -27,5 +27,6 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+        <p id="txt"></p>
     </body>
 </html>
