@@ -7,6 +7,11 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="button" class='delete' onclick='return deletePost(this);'>delete</button>
+        </form>
         <h1 class='title'>{{ $post->post_title }}</h1>
         <div class="content">
             <h2>概要</h2>
@@ -23,5 +28,13 @@
         <div class="footer">
             <a href="/">戻る</a>
         </div>
+        <script>
+            function deletePost(e){
+                'use strict';
+                if(confirm('削除すると復元できません。\n本当に削除しますか?')){
+                    document.getElementById('form_delete').submit();
+                }
+            }
+        </script>
     </body>
 </html>

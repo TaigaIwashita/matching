@@ -27,10 +27,16 @@
                 <input type="datetime-local" name="post[limit_time]">
                 <h2>募集人数</h2>
                 <input type="number" name="post[player_sum]" placeholder="人数" min="0"/>
-                <h2>承認方法</h2>
-                <input type="number" name="post[user_permission]" placeholder="承認方法" min="0" max="1"/>
-                <h2>公開方法</h2>
-                <input type="number" name="post[release_format]" placeholder="公開方法" min="0" max="1"/>
+                <h2>他のユーザーの承認方法</h2>
+                <select name="post[user_permission]">
+                    <option value="0" selected>全て許可する</option>
+                    <option value="1">確認する</option>
+                </select>
+                <h2>投稿の公開方法</h2>
+                 <select name="post[release_format]">
+                    <option value="0" selected>公開</option>
+                    <option value="1">非公開</option>
+                </select>
             </div>
             <input type="submit" value="投稿する"/>
         </form>
