@@ -7,11 +7,6 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
-            @csrf
-            @method('DELETE')
-            <button type="button" class='delete' onclick='return deletePost(this);'>delete</button>
-        </form>
         <h1 class='title'>{{ $post->post_title }}</h1>
         <div class="content">
             <h2>概要</h2>
@@ -25,6 +20,12 @@
             <h2>掲載期間</h2>
             <p>{{ $post->limit_time }} </p>
         </div>
+        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+        <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
+            @csrf
+            @method('DELETE')
+            <button type="button" class='delete' onclick='return deletePost(this);'>delete</button>
+        </form>
         <div class="footer">
             <a href="/">戻る</a>
         </div>
