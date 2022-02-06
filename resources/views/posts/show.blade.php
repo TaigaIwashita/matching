@@ -11,6 +11,8 @@
         <div class="content">
             <h2>概要</h2>
             <p>{{ $post->post_body }}</p>
+            <h2>ゲーム名</h2>
+            <a href="/games/{{$post->game->id}}">{{ $post->game->game_title }}</a>
             <h2>ルームコード</h2>
             <p>{{ $post->room_code }}</p>
             <h2>募集人数</h2>

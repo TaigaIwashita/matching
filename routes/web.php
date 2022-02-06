@@ -25,6 +25,9 @@ Route::get('/posts/{post}', 'PostController@show');
 Route::get('/posts/{post}/edit', 'PostController@edit');
 Route::put('/posts/{post}', 'PostController@update');
 
+Route::get('/games/create', 'PostController@GameCreate');
+Route::post('/games', 'PostController@GameStore');
+Route::get('/games/{game}', 'GameController@index');
 
 Route::delete('/posts/{post}', 'PostController@delete');
 

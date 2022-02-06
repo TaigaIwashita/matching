@@ -7,23 +7,6 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <div class='search'>
-            <h1>絞り込み</h1>
-            <h2>ゲームで絞り込む</h2>
-            <select name="post[game_id]" onChange="location.href=value;">
-                    <option value="/">---ゲームを選択してください---</option>
-                @foreach($games as $game)
-                    <option value="/games/{{ $game->id }}">{{ $game->game_title }}</option>
-                @endforeach
-            </select>
-            <h2>ジャンルで絞り込む</h2>
-            <select name="post[game_id]" onChange="location.href=value;">
-                <option value="/">---ジャンルを選択してください---</option>
-                @foreach($games as $game)
-                    <option value="/games/{{ $game->id }}">{{ $game->game_category }}</option>
-                @endforeach
-            </select>
-        </div>
         <h1>投稿一覧</h1>
         <div class='posts'>
             @foreach ($posts as $post)

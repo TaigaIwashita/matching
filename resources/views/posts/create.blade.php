@@ -17,6 +17,14 @@
             <div class="body">
                 <h2>概要</h2>
                 <textarea name="post[post_body]" placeholder="例)みんなで仲良く遊びましょう"></textarea>
+                <div class="game">
+                    <h2>ゲーム</h2>
+                    <select name="post[game_id]">
+                        @foreach($games as $game)
+                            <option value="{{ $game->id }}">{{ $game->game_title }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <h2>ルームコード</h2>
                 <input type="text" name="post[room_code]" placeholder="ルームコード"/>
                 <h2>開始時間</h2>

@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
 {
     use SoftDeletes;
-    public function getPaginateByLimit(int $limit_count = 10)
+    public function getPaginateByLimit(int $limit_count = 5)
     {
-        // updated_atで降順に並べたあと、limitで件数制限をかける
-        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+       return $this::with('game')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
     
     protected $fillable = [
@@ -24,5 +23,11 @@ class Post extends Model
         'limit_time',
         'user_permission',
         'release_format',
+        'game_id',
     ];
+    
+    public function game()
+    {
+        return $this->belongsTo('App\Game');
+    }
 }
