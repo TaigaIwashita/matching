@@ -16,7 +16,7 @@ class Game extends Model
     public function getByGame(int $limit_count = 5)
     {
         //更新順
-         return $this->posts()->with('game')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+         return $this->posts()->with(['game','user'])->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
     
     public function posts()   
