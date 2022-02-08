@@ -24,10 +24,17 @@ class Post extends Model
         'user_permission',
         'release_format',
         'game_id',
+        'user_id',
     ];
     
     public function game()
     {
         return $this->belongsTo('App\Game');
+    }
+    
+    //「1対多」の関係なので単数系に
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

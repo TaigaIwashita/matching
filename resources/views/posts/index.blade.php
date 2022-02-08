@@ -12,7 +12,7 @@
         
     </head>
     <body>
-        {{Auth::user()->name}}
+        <p class='mypage'>[<a href='/user'>{{Auth::user()->name}}さんのマイページ</a>]</p>
         <div class='search'>
             <h1>絞り込み</h1>
             <h2>ゲームで絞り込む</h2>
@@ -20,13 +20,6 @@
                     <option value="/">---ゲームを選択してください---</option>
                 @foreach($games as $game)
                     <option value="/games/{{ $game->id }}">{{ $game->game_title }}</option>
-                @endforeach
-            </select>
-            <h2>ジャンルで絞り込む</h2>
-            <select name="post[game_id]" onChange="location.href=value;">
-                <option value="/">---ジャンルを選択してください---</option>
-                @foreach($games as $game)
-                    <option value="/games/{{ $game->id }}">{{ $game->game_category }}</option>
                 @endforeach
             </select>
         </div>
@@ -37,8 +30,9 @@
                     <h2 class='title'>
                         <a href="/posts/{{ $post->id }}">{{ $post->post_title }}</a>
                     </h2>
+                    <small>投稿者 : {{ $post->user->name }}</small>
                     <h2>ゲーム名</h2>
-                    <a href="/games/{{$post->game->id}}">{{ $post->game->game_title }}</a>
+                    <p>{{ $post->game->game_title }}</p>
                     <h3>募集人数</h3>
                     <p class='body'>{{ $post->player_sum }}人</p>
                     <h3>時間</h3>

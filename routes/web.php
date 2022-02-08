@@ -29,6 +29,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/games', 'PostController@GameStore');
     Route::get('/games/{game}', 'GameController@index');
     
+    Route::get('/user', 'UserController@index');
+    
     Route::delete('/posts/{post}', 'PostController@delete');
 });
 
